@@ -47,8 +47,8 @@ _c_lang_spj_compile = {
 
 _c_lang_spj_config = {
     "exe_name": "spj-{spj_version}",
-    "command": "{exe_path} {in_file_path} {user_out_file_path}",
-    "seccomp_rule": "c_cpp"
+    "command": "{exe_path} {in_file_path} {user_out_file_path} {out_file_path} {score} {custom_score_file_path} {extra_file_path}",
+    "seccomp_rule": "c_cpp_file_io"
 }
 
 _cpp_lang_config = {
@@ -79,7 +79,7 @@ int main() {
     },
     "run": {
         "command": "{exe_path}",
-        "seccomp_rule": "c_cpp",
+        "seccomp_rule": {ProblemIOMode.standard: "c_cpp", ProblemIOMode.file: "c_cpp_file_io"},
         "env": default_env
     }
 }
@@ -95,8 +95,8 @@ _cpp_lang_spj_compile = {
 
 _cpp_lang_spj_config = {
     "exe_name": "spj-{spj_version}",
-    "command": "{exe_path} {in_file_path} {user_out_file_path}",
-    "seccomp_rule": "c_cpp"
+    "command": "{exe_path} {in_file_path} {user_out_file_path} {out_file_path} {score} {custom_score_file_path} {extra_file_path}",
+    "seccomp_rule": "c_cpp_file_io"
 }
 
 _java_lang_config = {
