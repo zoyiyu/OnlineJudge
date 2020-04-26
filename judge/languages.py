@@ -173,6 +173,14 @@ _py3_lang_config = {
     }
 }
 
+_js_lang_config = {
+   "run": {
+       "exe_name": "solution.js",
+       "command": "/usr/bin/nodejs {exe_path}",
+       "seccomp_rule": "general",
+   }
+}
+
 languages = [
     {"config": _c_lang_config, "spj": {"compile": _c_lang_spj_compile, "config": _c_lang_spj_config},
      "name": "C", "description": "GCC 5.4", "content_type": "text/x-csrc"},
@@ -181,4 +189,5 @@ languages = [
     {"config": _java_lang_config, "name": "Java", "description": "OpenJDK 1.8", "content_type": "text/x-java"},
     {"config": _py2_lang_config, "name": "Python2", "description": "Python 2.7", "content_type": "text/x-python"},
     {"config": _py3_lang_config, "name": "Python3", "description": "Python 3.5", "content_type": "text/x-python"},
+    {"config": _js_lang_config, "name": "JS", "description": "javascript", "content_type": "text/x-javascript"},
 ]
